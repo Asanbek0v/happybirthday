@@ -1,0 +1,114 @@
+#Hero {
+  width: 100%;
+  height: calc(100vh - 80px); // Шапкадан (header) кийинки боштукка туура келиш үчүн
+  display: flex;
+  align-items: center;
+  justify-content: center;
+//   background-color: #fcfbf7; // Бүтүндөй сайттын фондук ачык түсү
+  padding: 20px;
+}
+
+.Hero {
+  // Телефондун экраны сыяктуу кооз блок (Card) түзөбүз
+  &__card {
+    position: relative;
+    width: 100%;
+    max-width: 450px; // Компьютерде өтө чоңоюп кетпей, телефондун өлчөмүндө сакталат
+    height: 100%;
+    max-height: 750px;
+    border-radius: 12px; // Бурчтарын бир аз тегеректөө
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); // Назик көлөкө
+    
+    // Сүрөттү ушул блоктун фонуна толук сыйдырабыз
+    background: url("../../../assets/das.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  // Тексттер сүрөттүн үстүндө даана окулушу үчүн ак тумандуу катмар
+  &__bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.65); // Сүрөттү бир аз агартып, текстти алдыга чыгарат
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2; // Катмардын үстүнө чыгаруу
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 30px;
+  }
+
+  &__subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #bfa37a; // Алтын-сургулт түс
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 400;
+    font-style: italic;
+    color: #1a1a1a;
+    margin: 5px 0;
+    font-family: "Playfair Display", "Georgia", serif;
+    
+    @media (max-width: 480px) {
+      font-size: 52px; // Телефондордо бир аз кичирейет
+    }
+  }
+
+  &__date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__date {
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: 400;
+  }
+
+  &__line {
+    width: 35px;
+    height: 1px;
+    background-color: #bfa37a;
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 30px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    span {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #777;
+      text-transform: uppercase;
+    }
+
+    &-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, #bfa37a, transparent);
+    }
+  }
+}

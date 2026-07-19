@@ -1,0 +1,185 @@
+#Confirmation {
+  width: 100%;
+  min-height: 70vh;
+//   background-color: #fcfbf7; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 60px 0;
+  font-family: "Georgia", serif;
+}
+
+.confirm-block {
+  width: 100%;
+  max-width: 500px; 
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+
+  &__title {
+    font-size: 38px;
+    font-weight: 400;
+    font-style: italic;
+    color: #1a1a1a;
+    font-family: "Playfair Display", "Georgia", serif;
+    margin-bottom: 50px;
+
+    @media (max-width: 576px) {
+      font-size: 30px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__input-wrapper {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dcdad4;
+    background: transparent;
+    padding: 12px 0;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Georgia", serif;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:focus {
+      border-bottom: 1px solid #bfa37a;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+
+    @media (max-width: 450px) {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  &__btn {
+    flex: 1;
+    padding: 18px 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 1px solid #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+
+    &--accept {
+      background-color: #11161a;
+      color: #ffffff;
+
+      &:hover {
+        background-color: #bfa37a;
+        border-color: #bfa37a;
+      }
+    }
+
+    &--decline {
+      background-color: transparent;
+      color: #1a1a1a;
+
+      &:hover {
+        background-color: #f5f4f0;
+        border-color: #bfa37a;
+        color: #bfa37a;
+      }
+    }
+  }
+
+  &__note {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: #888;
+    margin-top: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  // ---- ЖАҢЫ: Ийгиликтүү жооп бергендеги блоктун стилдери ----
+  &__success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+    animation: fadeIn 0.5s ease forwards; // Назик пайда болуу анимациясы
+
+    // Сүрөттөгүдөй назик алтын-сары тегерекче
+    &-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #fcf6eb; // Ичиндеги назик сары фон
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    // Ичиндеги куш белгиси (чекмарк)
+    &-icon {
+      width: 32px;
+      height: 32px;
+      fill: #bfa37a; // Алтын түс
+    }
+
+    // "Спасибо! Ответ записан." жазуусу
+    &-text {
+      font-size: 24px;
+      font-weight: 500;
+      color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      letter-spacing: -0.5px;
+
+      @media (max-width: 576px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__footer {
+    font-size: 18px;
+    font-style: italic;
+    color: #bfa37a; 
+    margin-top: 60px; // Аралык бир аз кыскартылды
+    font-family: "Playfair Display", "Georgia", serif;
+  }
+}
+
+// Пайда болуу анимациясы
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,177 @@
+#Header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  // Баштапкы абалы (өзүнүн түсү же тунук фон)
+  background-color: transparent;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &.scrolled {
+    background-color: #ffffff; // Жылганда ак түскө боёлот
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Төмөн жагына жеңил көлөкө түшөт
+  }
+  .Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+
+    h1 {
+      font-family: italic;
+      font-size: 28px;
+      color: #272727;
+      margin: 0;
+      span {
+        color: #d0b881;
+      }
+    }
+
+    &--block {
+      display: flex;
+      align-items: center;
+      gap: 2pc;
+
+      a {
+        white-space: nowrap;
+        color: #272727;
+        transition: ease 0.5s;
+      }
+      a:hover {
+        color: #d0b881;
+      }
+    }
+
+    &--date-desktop {
+      display: block;
+    }
+
+    &--date-mobile {
+      display: none;
+    }
+
+    button {
+      color: #d0b881;
+      background: transparent;
+      padding: 7px 20px;
+      border: 1px solid #d0b881;
+      transition: ease 0.5s;
+      cursor: pointer;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #d0b881;
+        color: #000000;
+      }
+    }
+
+    &--burger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      cursor: pointer;
+      z-index: 101;
+
+      span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: #d0b881;
+        transition: 0.3s ease;
+      }
+
+      &.active {
+        span:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+      }
+    }
+
+    &--overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 99;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .Header {
+      &--block {
+        gap: 1.2pc;
+      }
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .Header {
+      height: 70px;
+
+      &--date-desktop {
+        display: none;
+      }
+
+      &--burger {
+        display: flex;
+      }
+
+      &--block {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: #121212;
+        //   background-color: #f6f1e9;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+        z-index: 100;
+
+        &.active {
+          right: 0;
+        }
+
+        a {
+          font-size: 18px;
+        }
+
+        &--date-mobile {
+          display: block;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  // Маленькие экраны
+  @media (max-width: 400px) {
+    .Header {
+      h1 {
+        font-size: 20px;
+      }
+      &--block {
+        width: 85%;
+      }
+    }
+  }
+}

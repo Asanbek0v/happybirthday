@@ -1,0 +1,129 @@
+#InvitationInfo {
+  width: 100%;
+  min-height: 100vh;
+  // background-color: #fcfbf7; // Сүрөттөгүдөй назик крем түсү
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  font-family: "Georgia", serif;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Компьютерде 50/50 кылып экиге бөлөт
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+
+  // Телефондор жана планшеттер үчүн бир катарга тизүү
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+
+    .gold-text {
+      font-style: italic;
+      color: #bfa37a; // Алтын/сургулт түс
+    }
+
+    @media (max-width: 576px) {
+      font-size: 32px;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+    max-width: 480px;
+    margin-bottom: 40px;
+
+    @media (max-width: 992px) {
+      margin: 0 auto 30px auto;
+    }
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid #e5e2da;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  &__details {
+    display: flex;
+    gap: 60px;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #bfa37a;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .value {
+      font-size: 18px;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+  }
+
+  // Оң жактагы четтери тегеректелген кооз сүрөт блогу
+  &__image-wrapper {
+    width: 100%;
+    max-width: 550px;
+    height: 550px;
+    border-radius: 12px;
+    background-size: cover; // Сүрөттү блокко толук толтурат
+    background-position: center; // Сүрөттүн ортосун көрсөтөт
+    background-repeat: no-repeat;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+
+    @media (max-width: 1200px) {
+      height: 450px;
+    }
+    @media (max-width: 576px) {
+      height: 350px;
+    }
+  }
+}
