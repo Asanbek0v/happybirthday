@@ -49,3 +49,18 @@ main {
   width: 100%;
   overflow-x: hidden;
 }
+#RSVP {
+  width: 100%;
+  box-sizing: border-box; /* Padding ичине кирсин деп айтабыз */
+  padding: 20px; /* Керектүү аралык (мисалы) */
+
+  /* Бул блоктогу ири мазмундарды (текст, карта) контейнерден чыгарбоо */
+  h2,
+  p,
+  .RSVP--form,
+  div {
+    max-width: 100% !important; /* Контейнерден чоң болбосун */
+    word-wrap: break-word; /* Текст өтө узун болсо, аны кийинки сапка көчүрөт */
+    box-sizing: border-box;
+  }
+}
