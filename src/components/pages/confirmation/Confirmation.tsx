@@ -36,7 +36,7 @@ const Confirmation: FC = () => {
 
     if (choice === "decline") {
       toast.error("Не принимаем! Отказ не принимается 🙅‍♂️😘", {
-        position: "top-center",
+        position: "bottom-center",
         autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -88,17 +88,28 @@ const Confirmation: FC = () => {
 
   return (
     <section id="Confirmation">
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-center"
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 99999,
+          width: "90%",
+          maxWidth: "400px",
+        }}
+      />
 
       <div className="container">
         {/* Бүтүндөй блок жумшак чоңоюп чыгат */}
-        <div 
+        <div
           className="confirm-block"
           data-aos="zoom-in"
           data-aos-duration="1000"
         >
           {/* Баш сөз өйдөдөн ылдый түшөт */}
-          <h2 
+          <h2
             className="confirm-block__title"
             data-aos="fade-down"
             data-aos-delay="200"
@@ -110,7 +121,7 @@ const Confirmation: FC = () => {
             <>
               <form className="confirm-block__form">
                 {/* Инпут талаасы 300мс кечигүү менен өйдө көтөрүлөт */}
-                <div 
+                <div
                   className="confirm-block__input-wrapper"
                   data-aos="fade-up"
                   data-aos-delay="300"
@@ -126,7 +137,7 @@ const Confirmation: FC = () => {
                 </div>
 
                 {/* Баскычтар блогу дагы бир аз кечигип (400мс) өйдө жылат */}
-                <div 
+                <div
                   className="confirm-block__buttons"
                   data-aos="fade-up"
                   data-aos-delay="400"
@@ -169,7 +180,7 @@ const Confirmation: FC = () => {
           )}
 
           {/* Футер эң аягында акырын пайда болот */}
-          <footer 
+          <footer
             className="confirm-block__footer"
             data-aos="fade-in"
             data-aos-delay="600"
