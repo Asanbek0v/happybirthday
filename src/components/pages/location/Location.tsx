@@ -2,7 +2,6 @@ import { FC } from "react";
 import "./Location.scss";
 
 const Location: FC = () => {
-  // Өзүңүздүн 2GIS дарегиңиздин кыскартылган шилтемеси
   const tgisLink = "https://go.2gis.com/Or3Zw";
 
   return (
@@ -10,7 +9,6 @@ const Location: FC = () => {
       <div className="container">
         <div className="location-block">
           
-          {/* Картанын баш сөз бөлүгү төмөндөн өйдө жай көтөрүлүп чыгат */}
           <div 
             className="location-block__header"
             data-aos="fade-up"
@@ -23,10 +21,6 @@ const Location: FC = () => {
             </p>
           </div>
 
-          {/* 
-             Бүтүндөй карта зонасы жумшак чоңоюп (zoom-in) ачылат.
-             data-aos-duration="1200" картанын жайыраак жана кооз ачылышын камсыз кылат.
-          */}
           <a
             href={tgisLink}
             target="_blank"
@@ -47,15 +41,13 @@ const Location: FC = () => {
               referrerPolicy="strict-origin-when-cross-origin"
             ></iframe>
 
-            {/* Картаны басууга шарт түзүүчү жана iframe'ди жаап туруучу тунук катмар */}
             <div className="location-block__map-overlay"></div>
 
-            {/* 2GIS баскычы карта ачылгандан кийин оң жактан жумшак жылып кирет */}
+            {/* Ордунан жылбай турган коопсуз жумшак анимация */}
             <div 
               className="location-block__2gis-btn"
-              data-aos="fade-left"
+              data-aos="fade"
               data-aos-delay="800"
-              data-aos-anchor="#Location" // Анимация ушул блокко скролл болгондо эле даяр турат
             >
               Открыть в 2GIS
               <svg viewBox="0 0 24 24" className="icon">

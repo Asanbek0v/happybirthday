@@ -89,15 +89,15 @@ const Confirmation: FC = () => {
   return (
     <section id="Confirmation">
       <ToastContainer
-        position="bottom-center"
         style={{
           position: "fixed",
-          bottom: "20px",
+          top: "20px",
           left: "50%",
           transform: "translateX(-50%)",
-          zIndex: 99999,
-          width: "90%",
-          maxWidth: "400px",
+          zIndex: 999999, // Эң үстүнө чыгарат
+          width: "90%", // Экранды толтурбай 90% гана ээлейт
+          maxWidth: "380px", // Максималдуу кенендиги кичинекей болот
+          height: "auto", // Бүт экранды жаппайт
         }}
       />
 

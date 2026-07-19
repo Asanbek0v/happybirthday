@@ -38,7 +38,7 @@
     font-size: 38px;
     font-weight: 400;
     font-style: italic;
-    color: #ffffff; // Кара фондо көрүнүшү үчүн ак кылдык
+    color: #ffffff;
     font-family: "Playfair Display", "Georgia", serif;
 
     @media (max-width: 576px) {
@@ -48,13 +48,12 @@
 
   &__address {
     font-size: 15px;
-    color: #aaa; // Текст жакшы окурулушу үчүн бир аз ачык кылдык
+    color: #aaa;
   }
 
-  // Карта кутусу (Эми бул чоң <a> теги)
   &__map-wrapper {
     position: relative;
-    display: block; // <a> теги туура иштеши үчүн
+    display: block;
     width: 100%;
     height: 450px;
     border-radius: 12px;
@@ -66,14 +65,14 @@
       height: 350px;
     }
 
-    // Картанын үстүнө чыгып, басууларды кабыл алуучу тунук катмар
     &:hover .location-block__map-overlay {
-      background: rgba(0, 0, 0, 0.15); // Чычканды алып барганда карта бир аз караңгылайт
+      background: rgba(0, 0, 0, 0.15);
     }
 
+    // ТУУРАЛАНДЫ: Мышканы алып барганда ордунан жылбайт, болгону бир аз чоңоёт
     &:hover .location-block__2gis-btn {
       background-color: #f8f9fa;
-      transform: translate(-50%, -50%) scale(1.05); // Баскыч бир аз чоңоёт
+      transform: translate(-50%, -50%) scale(1.05); 
     }
   }
 
@@ -84,7 +83,7 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.05); // Карта бир аз жумшак көрүнөт
+    background: rgba(0, 0, 0, 0.05);
     transition: background 0.3s ease;
   }
 
@@ -92,16 +91,15 @@
     width: 100%;
     height: 100%;
     display: block;
-    pointer-events: none; // Google картанын ичиндеги баскычтар иштебей калат, бүт басуу 2GIS'ке кетет
+    pointer-events: none;
   }
 
-  // Картанын ТАК ОРТОСУНДО турчу баскыч
   &__2gis-btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); // Так ортого теңдөөчү сыйкырдуу сап
-    z-index: 3; // Катмардан да өйдө турат
+    transform: translate(-50%, -50%); // Дайыма так ортодо кармап турат
+    z-index: 3;
     background-color: #ffffff;
     color: #1a73e8;
     padding: 15px 35px;
@@ -112,8 +110,10 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap; // Тексттин ылдый түшүп кетүүсүнөн коргойт
 
     .icon {
       width: 18px;
@@ -123,9 +123,8 @@
 
     @media (max-width: 576px) {
       font-size: 13px;
-      padding: 10px 20px;
-      width: 80%; // Телефондо баскыч чоңураак жана ортодо ыңгайлуу турат
-      justify-content: center;
+      padding: 12px 24px;
+      width: auto; // Телефондо туура сыйыш үчүн автоматтык кылдык
     }
   }
 }
